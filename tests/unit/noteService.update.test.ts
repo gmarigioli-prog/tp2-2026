@@ -18,7 +18,7 @@ describe('NoteService - updateNote (Ejercicio 4)', () => {
     });
     const updatedNote = service.updateNote(note.id, { title: 'Nuevo Titulo' });
     expect(updatedNote).toBeDefined();
-    expect(updatedNote?.title).toBe('Nuevo Título');
+    expect(updatedNote?.title).toBe('Nuevo Titulo');
     expect(updatedNote?.content).toBe('Contenido original');
   });
   it('actualiza solo el contenido  y no toca el titulo', () => {
