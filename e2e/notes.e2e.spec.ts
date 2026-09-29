@@ -25,3 +25,13 @@ test.describe('E2E /notes', () => {
   });
 });
 
+test.describe('E2E caso de error', () => {
+  test('GET /notes/:id con una id inexistente devuelve error 404', async ({ baseURL }) => {
+    const ctx = await request.newContext({ baseURL });
+
+    const res = await ctx.get('/notes/9999');
+
+    expect(res.status()).toBe(404);
+    await ctx.dispose();
+  });
+});
